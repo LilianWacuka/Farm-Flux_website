@@ -7,37 +7,20 @@ const path = require('path');
 const authRoutes = require('./routes/authRoutes');
 const farmRoutes = require('./routes/farmRoutes');
 const transactionRoutes = require('./routes/transctionRoutes');
+const analyticsRoutes = require('./routes/analyticsRoutes');
 const reportRoutes = require('./routes/reportRoutes');
-
 dotenv.config();
 connectDB();
 
 const app = express();
-
-// ✅ Updated CORS setup
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://farm-flux-website-3qls.onrender.com'
-];
-
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    } else {
-      return callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true
-}));
-
+app.use(cors());
 app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/farms', farmRoutes);
 app.use('/api/transactions', transactionRoutes);
+app.use('/api/analytics', analyticsRoutes);
 app.use('/api/reports', reportRoutes);
 
 app.get('/', (req, res) => res.send('Backend is running successfully'));
