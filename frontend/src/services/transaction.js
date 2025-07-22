@@ -1,4 +1,4 @@
-const API= 'http://localhost:5000/api'
+const API= import.meta.env.VITE_API_URL;
 export const createFarm = async (body, token) =>{
     try {
         const res = await fetch(`${API}/farms`,{
