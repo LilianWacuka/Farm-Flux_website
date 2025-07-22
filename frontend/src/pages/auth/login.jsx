@@ -34,7 +34,7 @@ export default function Login() {
       localStorage.setItem("token", res.token);
       navigate("/dashboard");
       if (!res?.token){
-        alert("Login failed: Not Token");
+        alert("Login failed Again");
         return;
       }
     } catch (err) {
