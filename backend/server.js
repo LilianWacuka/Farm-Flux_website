@@ -9,11 +9,30 @@ const farmRoutes = require('./routes/farmRoutes');
 const transactionRoutes = require('./routes/transctionRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
 const reportRoutes = require('./routes/reportRoutes');
+
 dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+
+// ✅ Updated CORS setup
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://farm-flux-website-3qls.onrender.com'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // allow non-browser requests
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
