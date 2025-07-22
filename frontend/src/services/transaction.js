@@ -26,7 +26,7 @@ export const addExpense = async (body, token) =>{
                 'content-type':'application/json',
                 'authorization':`bearer ${token}`
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify({...body, type:'expense'})
         })
         const data = await res.json()
         if(!res.ok){
@@ -44,7 +44,7 @@ export const addIncome = async (body, token) => {
                 'content-type':'application/json',
                 'authorization':`bearer ${token}`
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify({...body, type:'income'})
         })
     } catch (error) {
         throw error

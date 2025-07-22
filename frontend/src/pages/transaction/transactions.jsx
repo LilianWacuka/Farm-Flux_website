@@ -5,7 +5,7 @@ import { addExpense, addIncome, createFarm } from '@/services/transaction';
 
 export default function Transaction() {
   const [incomeData, setIncomeData] = useState({ name: '', quantity: '', amount: '', category: '' });
-  const [expenseData, setExpenseData] = useState({ name: '', quantity: '', amount: '', category: '' });
+  const [expenseData, setExpenseData] = useState({ name: '', quantity: '', amount: '', category: ''});
   const [incomes, setIncomes] = useState([]);
   const [expenses, setExpenses] = useState([]);
   const [farmName, setFarmName] = useState("");
@@ -118,6 +118,7 @@ export default function Transaction() {
               <option value="chick">Chick</option>
               <option value="feather">Feather</option>
               <option value="eggs">Eggs</option>
+              
             </select>
             <Button label="Add Income" backgroundColor="bg-green-600" onClick={handleAddIncome} icon={
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
