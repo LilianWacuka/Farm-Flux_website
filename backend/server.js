@@ -7,7 +7,6 @@ const path = require('path');
 const authRoutes = require('./routes/authRoutes');
 const farmRoutes = require('./routes/farmRoutes');
 const transactionRoutes = require('./routes/transctionRoutes');
-const analyticsRoutes = require('./routes/analyticsRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 
 dotenv.config();
@@ -39,7 +38,6 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/farms', farmRoutes);
 app.use('/api/transactions', transactionRoutes);
-app.use('/api/analytics', analyticsRoutes);
 app.use('/api/reports', reportRoutes);
 
 app.get('/', (req, res) => res.send('Backend is running successfully'));
