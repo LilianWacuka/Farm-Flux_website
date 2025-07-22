@@ -1,9 +1,10 @@
 const Transaction = require('../models/Transaction');
+const { getIncomeReport } = require('./reportController');
 
 // Create transaction with backend-calculated total
 const createTransaction = async (req, res) => {
   try {
-    const { name, amount, quantity, category, notes, date, farmId } = req.body;
+    const { name, amount, quantity, category, type, notes, date, farmId } = req.body;
 
     // Ensure amount and quantity are numbers, then compute total
     const parsedAmount = parseFloat(amount);
@@ -16,6 +17,7 @@ const createTransaction = async (req, res) => {
       quantity: parsedQuantity,
       total,
       category,
+      type,
       notes,
       date,
       farmId,
@@ -70,6 +72,7 @@ const deleteTransaction = async (req, res) => {
 module.exports = {
   createTransaction,
   getTransactions,
+  getIncomeReport,
   updateTransaction,
   deleteTransaction,
 };
