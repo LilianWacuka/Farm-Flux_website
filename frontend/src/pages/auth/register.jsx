@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import Card from '../../components/Card';
-import { useAuth } from '../../context/authContext'; 
+import { useAuth } from '../../context/authContext';
 
 export default function Register() {
   const [username, setUsername] = useState('');
@@ -12,7 +12,7 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-  const { register } = useAuth(); 
+  const { register } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,9 +20,9 @@ export default function Register() {
     setError('');
 
     try {
-      const res = await register({ username, email, password }); 
-      localStorage.setItem("token", res.token);
-      navigate('/dashboard'); 
+      const res = await register({ username, email, password });
+      localStorage.setItem('token', res.token);
+      navigate('/dashboard');
     } catch (err) {
       setError(err.message || 'Registration failed');
     }
@@ -31,17 +31,19 @@ export default function Register() {
   };
 
   return (
-    <div className='flex min-h-screen items-center justify-center bg-gray-100'>
-      <Card>
-        <h2 className='text-2xl font-bold mb-4 text-center text-grey-700'></h2>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
+      <Card >
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-800">
+          Create an Account
+        </h2>
 
-        <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="p-2 border rounded"
+            className="p-3 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
           <input
@@ -49,7 +51,7 @@ export default function Register() {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-2 border rounded"
+            className="p-3 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
           <input
@@ -57,7 +59,7 @@ export default function Register() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="p-2 border rounded"
+            className="p-3 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
 
@@ -65,14 +67,14 @@ export default function Register() {
 
           <Button
             label={loading ? 'Registering...' : 'Register'}
-            backgroundColor="bg-blue-500"
+            backgroundColor="bg-blue-600"
             disabled={loading}
           />
         </form>
 
-        <div className="mt-4 text-sm text-center">
+        <div className="mt-6 text-sm text-center">
           Already have an account?{' '}
-          <Link to='/login' className="text-blue-600 hover:underline">
+          <Link to="/login" className="text-blue-600 hover:underline">
             Login
           </Link>
         </div>

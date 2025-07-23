@@ -47,7 +47,7 @@ export default function Login() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-zinc-900 px-4">
-      <Card className="w-full max-w-md shadow-xl animate-fade">
+      <Card className="w-full max-w-md shadow-xl animate-fade p-6 sm:p-8">
         
           <h2 className="text-center text-2xl font-bold"></h2>
           <form onSubmit={(e) => handleLogin(e)} className="flex flex-col gap-4 mt-4">
