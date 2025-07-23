@@ -3,15 +3,35 @@ const connectDB = require('./config/db');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
+
 const authRoutes = require('./routes/authRoutes');
 const farmRoutes = require('./routes/farmRoutes');
 const transactionRoutes = require('./routes/transctionRoutes');
 const reportRoutes = require('./routes/reportRoutes');
+
 dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+
+// ✅ Updated CORS setup
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://farm-flux-website-3qls.onrender.com'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
