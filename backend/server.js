@@ -17,7 +17,8 @@ const app = express();
 // ✅ Updated CORS setup
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://farm-flux-website-3qls.onrender.com'
+  'https://farm-flux-website-3qls.onrender.com',
+  'https://farm-flux-website.onrender.com'
 ];
 
 app.use(cors({
