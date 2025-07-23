@@ -6,7 +6,7 @@ const path = require('path');
 
 const authRoutes = require('./routes/authRoutes');
 const farmRoutes = require('./routes/farmRoutes');
-const transactionRoutes = require('./routes/transctionRoutes');
+const transactionRoutes = require('./routes/transactionRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 
 dotenv.config();
