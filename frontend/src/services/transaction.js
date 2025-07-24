@@ -1,4 +1,4 @@
-const API = "https://farm-flux-website-3qls.onrender.com/api";
+const API = "https://farm-flux-website.onrender.com/api";
 console.log(`${API}/farms`)
 
 // Create a new farm
