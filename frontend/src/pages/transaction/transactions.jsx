@@ -80,9 +80,9 @@ export default function Transaction() {
   const totalExpense = expenses.reduce((sum, item) => sum + (item.total || 0), 0);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 gap-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 gap-8 w-full p-4 sm:p-6 md:p-8 lg:max-w-2xl">
       {/* Farm Card */}
-      <Card className="p-6 w-full max-w-5xl">
+      <Card className="p-6 w-full max-w-5xl px-4  p-4 sm:p-6 md:p-8 lg:max-w-2xl">
         <h2 className="font-bold text-xl text-center mb-4">Register Farm</h2>
         <form className="flex flex-col gap-4 mt-4">
           <input className="p-2 border rounded" type="text" placeholder="Farm Name" value={farmName} onChange={e => setFarmName(e.target.value)} />

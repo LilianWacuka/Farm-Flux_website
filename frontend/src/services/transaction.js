@@ -1,4 +1,4 @@
-const API = "https://farm-flux-website.onrender.com/api";
+const API = import.meta.env.VITE_API_URL;
 console.log(`${API}/farms`)
 
 // Create a new farm
