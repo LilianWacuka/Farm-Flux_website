@@ -1,4 +1,7 @@
+import { error } from "console";
+
 const API= process.env.VITE_API_URL;
+console.log(error)
 export const createFarm = async (body, token) =>{
     try {
         const res = await fetch(`${API}/farms`,{
