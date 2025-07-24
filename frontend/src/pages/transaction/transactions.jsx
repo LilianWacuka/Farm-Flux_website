@@ -80,7 +80,7 @@ export default function Transaction() {
   const totalExpense = expenses.reduce((sum, item) => sum + (item.total || 0), 0);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6 gap-8 w-full p-4 sm:p-6 md:p-8 lg:max-w-2xl">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 ">
       {/* Farm Card */}
       <Card className="p-6 w-full max-w-5xl px-4  p-4 sm:p-6 md:p-8 lg:max-w-2xl">
         <h2 className="font-bold text-xl text-center mb-4">Register Farm</h2>
@@ -139,6 +139,7 @@ export default function Transaction() {
               <option value="">-- Select Category --</option>
               <option value="feed">Feed</option>
               <option value="medicine">Medicine</option>
+              <option value="vaccine">Vaccine</option>
               <option value="labor">Labor</option>
               <option value="equipment">Equipment</option>
               <option value="electricty">Electricity Bill</option>
