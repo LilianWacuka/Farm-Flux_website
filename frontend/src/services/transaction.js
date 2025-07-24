@@ -14,16 +14,16 @@ export const createFarm = async (body, token) => {
     });
 
     const data = await res.json();
-    console.log("✅ Create Farm Response:", data);
+    console.log("Farm Created:", data);
 
     if (!res.ok) {
-      console.error("❌ Create Farm Error:", data.message);
+      console.error("Error creating farm:", data.message);
       throw new Error(data.message);
     }
 
     return data;
   } catch (error) {
-    console.error("💥 Create Farm Catch:", error);
+    console.error(" Error Create Farm Catch:", error);
     throw error;
   }
 };
