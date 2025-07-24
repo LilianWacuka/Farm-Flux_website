@@ -1,4 +1,4 @@
-const API= import.meta.env.VITE_API_URL;
+const API= process.env.VITE_API_URL;
 export const createFarm = async (body, token) =>{
     try {
         const res = await fetch(`${API}/farms`,{
