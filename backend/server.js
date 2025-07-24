@@ -21,7 +21,7 @@ const allowedOrigins = [
   'https://farm-flux-website.onrender.com'
 ];
 
-app.use(cors);
+app.use(cors());
 
 app.use(express.json());
 
