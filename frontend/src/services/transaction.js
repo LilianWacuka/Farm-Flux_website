@@ -1,7 +1,5 @@
 const API = "https://farm-flux-website-3qls.onrender.com/api";
-console.log("Error loading API Base URL:", API);
-
-console.log("Error loading API Base URL:", API); 
+console.log(`${API}/farms`)
 
 // Create a new farm
 export const createFarm = async (body, token) => {
