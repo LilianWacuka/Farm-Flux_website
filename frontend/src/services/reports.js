@@ -1,4 +1,4 @@
-const API = import.meta.env.VITE_API_URL;
+const API = "https://farm-flux-website.onrender.com/api";
 console.log("🌍 API Base URL:", API);
 
 export const getIncomeReport = async () => {
