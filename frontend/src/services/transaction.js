@@ -1,5 +1,5 @@
 const API = import.meta.env.VITE_API_URL;
-console.log("🌍 API Base URL:", API); // Helps verify if the API is loaded correctly
+console.log("Error loading API Base URL:", API); 
 
 // 🔨 Create a new farm
 export const createFarm = async (body, token) => {
