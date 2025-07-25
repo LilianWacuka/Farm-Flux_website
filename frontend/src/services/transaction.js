@@ -7,6 +7,7 @@ export const createFarm = async (body, token) => {
     const res = await fetch(`${API}/farms`, {
       method: 'POST',
       headers: {
+         'credentials': 'include',
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
       },
@@ -41,16 +42,16 @@ export const addExpense = async (body, token) => {
     });
 
     const data = await res.json();
-    console.log("✅ Add Expense Response:", data);
+    console.log("Expense Created Sucessfully:", data);
 
     if (!res.ok) {
-      console.error("❌ Add Expense Error:", data.message);
+      console.error("Unable to Add Expense:", data.message);
       throw new Error(data.message);
     }
 
     return data;
   } catch (error) {
-    console.error("💥 Add Expense Catch:", error);
+    console.error("Unable to Add Expense", error);
     throw error;
   }
 };

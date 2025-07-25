@@ -1,5 +1,5 @@
 const API = import.meta.env.VITE_API_URL;
-console.log("🌍 API Base URL:", API);
+console.log("Wrong API:", API);
 
 export const getIncomeReport = async () => {
   const res = await fetch(`${API}/reports/income`, {

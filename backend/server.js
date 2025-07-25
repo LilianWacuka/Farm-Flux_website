@@ -21,7 +21,10 @@ const allowedOrigins = [
   'https://farm-flux-website.onrender.com'
 ];
 
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 
 app.use(express.json());
 
@@ -31,8 +34,15 @@ app.use('/api/farms', farmRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/reports', reportRoutes);
 
-app.get('/', (req, res) => res.send('Backend is running successfully'));
+// const __dirnamePath = __dirname;
+// app.use(express.static(path.join(__dirnamePath, '/frontend/dist')));
 
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirnamePath, 'frontend', 'dist', 'index.html'));
+// });
+
+
+// ✅ Server start
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
