@@ -134,7 +134,7 @@ We welcome contributions from the community! Here's how to get started:
 
 ## 📜 License
 
-**MIT License** © 2024 [Illian Macuka](https://github.com/illianMacuka)
+**MIT License** © 2024 [Illian wacuka](https://github.com/lilianwacuka)
 
 ---
 
